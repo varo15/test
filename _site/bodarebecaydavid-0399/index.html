@@ -1,0 +1,239 @@
+<!doctype html>
+<html class="notranslate" translate="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title data-title="CEREMONIA">BodaRebecayDavid_0399</title>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+    <meta property="og:title" content="BodaRebecayDavid_0399">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="/photos/large/BodaRebecayDavid_0399-686656.jpg">
+    <meta property="og:site_name" content="CEREMONIA">
+    <meta property="og:description" content="Álbum de boda de David y Rebeca">
+    <meta name="thumbnail" content="/photos/large/BodaRebecayDavid_0399-686656.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="BodaRebecayDavid_0399">
+    <meta name="twitter:description" content="Álbum de boda de David y Rebeca">
+    <meta name="twitter:image:src" content="/photos/large/BodaRebecayDavid_0399-686656.jpg">
+    <meta name="description" content="Álbum de boda de David y Rebeca">
+    <script type="text/javascript" src="/js/lazy-loading.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/master.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
+    <link rel="manifest" href="/site.webmanifest?v=1">
+    <link rel="mask-icon" href="/favicon.svg?v=1">
+    <link rel="shortcut icon" href="/favicon.ico?v=1">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+    <script defer data-domain="david-rebeca.alvarogb.dev" src="https://plausible.alvarogb.dev/js/script.js"></script>
+  </head>
+  <body>
+    <header id="page-title" style="background-color: #FFFFFF;">CEREMONIA</header>
+    <main>
+      <ul class="grid" id="target">
+        <li class="item target" id="id-bodarebecaydavid-0399" style="background-image: url('/photos/tint/BodaRebecayDavid_0399-65ba1d.jpg')" title="BodaRebecayDavid_0399">
+          <img class="lazyload" data-src="/photos/thumbnail/BodaRebecayDavid_0399-2a24a2.jpg" src="/photos/tint/BodaRebecayDavid_0399-65ba1d.jpg" height="" width="" />
+          <span class="full">
+            <span style="background-image: url('/photos/large/BodaRebecayDavid_0399-686656.jpg')"></span>
+          </span>
+          <a class="open" href="/bodarebecaydavid-0399" data-target="id-bodarebecaydavid-0399">Open</a>
+          <a class="close" href="/">Close</a>
+          <ul class="links top photodetail-links">
+            <li class="download"><a href="/photos/original/BodaRebecayDavid_0399.jpg" download="BodaRebecayDavid_0399.jpg" class="" title="Download this image">Download</a></li>
+          </ul>
+          <ul class="meta">
+            <!--
+        <li>NIKON D750</li>
+        <li>1/2000</li>
+        <li><span class="aperture"><em>f</em>/</span>1.4</li>
+        -->
+            <li><a href="/photos/original/BodaRebecayDavid_0399.jpg" download="BodaRebecayDavid_0399.jpg" class="gridview-button download" title="Download this image">Download</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="links bottom">
+      </ul>
+    </main>
+    <script>
+      const ESCAPE = 27;
+      const RIGHT = 39;
+      const LEFT = 37;
+      const UP = 38;
+      const DOWN = 40;
+      const TARGET_CLASS = 'target';
+      
+      /*
+       * swipe detection
+       *
+       * found at: https://stackoverflow.com/a/23230280
+       */
+      document.addEventListener('touchstart', handleTouchStart, false);
+      document.addEventListener('touchmove', handleTouchMove, false);
+      
+      var xDown = null;
+      
+      function getTouches(evt) {
+          return evt.touches ||             // browser API
+              evt.originalEvent.touches; // jQuery
+      }
+      
+      function handleTouchStart(evt) {
+          const firstTouch = getTouches(evt)[0];
+          xDown = firstTouch.clientX;
+      };
+      
+      function handleTouchMove(evt) {
+          if ( ! xDown ) {
+              return;
+          }
+      
+          var xUp = evt.touches[0].clientX;
+      
+          var xDiff = xDown - xUp;
+      
+          if ( xDiff > 0 ) {
+              clickNavigationButton('.next');
+          } else {
+              clickNavigationButton('.previous');
+          }
+          /* reset values */
+          xDown = null;
+          yDown = null;
+      };
+      
+      /* image sharing */
+      
+      const shareImage = (title, url) => {
+        if (navigator.canShare) {
+          const shareData = {
+            title: title,
+            text: 'I found a cool photo over at CEREMONIA! Check it out!',
+            url: url
+          }
+          navigator.share(shareData)
+        } else {
+          navigator.clipboard.writeText(`I found a cool photo over at CEREMONIA! Check it out!\n\n${window.location.origin}${url}`);
+          Toastify({
+            text: "Copied to clipboard",
+            duration: 3000,
+            style: {
+              background: "rgba(0, 0, 0, 0.7)"
+            }
+          }).showToast();
+        }
+      }
+      
+      const clickNavigationButton = (buttonClass) => {
+        const id = window.history.state && window.history.state.id;
+        if (id) {
+          const selector = `#${id} ${buttonClass}`;
+          const button = document.querySelector(selector);
+          button && button.click();
+        }
+      }
+      
+      const openPhoto = (id, href) => {
+        const photo = document.getElementById(id);
+        const phototitle = photo.getAttribute('title');
+        removeTargetClass();
+        photo.classList.add(TARGET_CLASS);
+        document.title = phototitle;
+        const title = document.querySelector('head title').getAttribute('data-title');
+        document.getElementById('page-title').innerHTML = title + '<span id="breadcrumb">//</span>' + phototitle;
+        if (href) {
+          window.history.pushState({id: id}, '', href);
+        }
+      }
+      
+      const closePhoto = (href) => {
+        const title = document.querySelector('head title').getAttribute('data-title');
+        removeTargetClass();
+        document.title = title;
+        document.getElementById('page-title').innerHTML = title;
+        if (href) {
+          window.history.pushState({}, '', href);
+        }
+      }
+      
+      const removeTargetClass = () => {
+        let targets = document.querySelectorAll(`.${TARGET_CLASS}`);
+        targets.forEach((target) => {
+          target.classList.remove(TARGET_CLASS);
+        });
+      }
+      
+      const handleClick = (selector, event, callback) => {
+        if (event.target.matches(selector)) {
+          callback();
+          event.preventDefault();
+        }
+      }
+      
+      const handleKey = (keyCode, event, callback) => {
+        if (event.keyCode === keyCode) {
+          callback();
+          event.preventDefault();
+        }
+      }
+      
+      const reverseSorting = () => {
+      
+      }
+      
+      window.onpopstate = function(event) {
+        if (event.state && event.state.id) {
+          const id = event.state.id;
+          openPhoto(id, null);
+        } else {
+          closePhoto(null);
+        }
+      }
+      
+      document.addEventListener('keydown', (event) => {
+        handleKey(ESCAPE, event, () => {
+          clickNavigationButton('.close');
+        });
+      
+        handleKey(RIGHT, event, () => {
+          clickNavigationButton('.next');
+        });
+      
+        handleKey(LEFT, event, () => {
+          clickNavigationButton('.previous');
+        });
+      
+        handleKey(UP, event, () => {
+          reverseSorting();
+        });
+      
+        handleKey(DOWN, event, () => {
+          reverseSorting();
+        });
+      });
+      
+      document.addEventListener('click', (event) => {
+        handleClick('[data-target][href]', event, () => {
+          const id = event.target.getAttribute('data-target');
+          const href = event.target.getAttribute('href');
+          openPhoto(id, href);
+        });
+      
+        handleClick('[href].close', event, () => {
+          const href = event.target.getAttribute('href');
+          closePhoto(href);
+        });
+      
+        handleClick('ul.links li.sort a', event, () => {
+          reverseSorting();
+        });
+      });
+      
+      lazyload();
+    </script>
+    <script src="/js/photos.js" data-photo-id="bodarebecaydavid-0399" data-photo-url="/bodarebecaydavid-0399" data-target-id="target"></script>
+  </body>
+</html>
